@@ -17,7 +17,7 @@ app.post('/api/fileanalyse', upload.single('upfile'), function(req, res) {
   res.json({
     name: req.file.originalname,
     type: req.file.mimetype,
-    size: Buffer.byteLength(req.file.buffer).toString()
+    size: req.file.size
   });
 });
 
